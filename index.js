@@ -58,8 +58,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+    return a*b;
   }
 
 
@@ -74,8 +74,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+  return age * 7;
 }
 
 
@@ -133,10 +133,27 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
-}
-  
-  
+  let value = '';
+  let choice = Math.random();
+  if(choice > 0 && choice < 0.33){
+    value = "Scissors"
+  } else if(choice > 0.33 && choice < 0.66){
+    value = "Paper"
+  } else if(choice > 0.67 && choice <= 1){
+    value = "Rock"
+  }
+
+  if((user == "Scissors" && value == "Paper") || (user == "Paper" && value == "Rock") || (user == "Rock" && value == "Scissors")){
+      return "you win!";
+    } else if((user == "Paper" && value == "Scissors") || (user == "Rock" && value == "Paper") || (user == "Scissors" && value == "Rock")){ 
+      return "you lose!";
+    } else if(user == value){
+      return "it's a tie"
+    }
+    }
+
+
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -149,9 +166,10 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+function miles(kilos){
+  return kilos * 0.621371
+}
+
 
 
 
@@ -163,9 +181,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
+function feet(cm){
+  return cm / 30.48
+}
  
 
 
@@ -179,9 +197,11 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(start){
+  for(let i = start;i > 0;i--){
+    return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i-1} bottles of soda on the wall`
   }
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -199,10 +219,19 @@ Using the grade function below do the following:
    below 60 = F
 */
   
-function grade(/*add your code here*/){
-    /*add your code here*/
-  }
-  
+function grade(n){
+  if(n >= 90 && n <= 100){
+   return "you got a A";
+} else if(n >= 80 && n < 89){
+   return "you got a B";
+} else if(n >= 70 && n < 79){
+   return "you got a C";
+} else if(n >= 60 && n < 69){
+   return "you got a D";
+} else if(n < 60){
+   return "you got a F";
+}
+}   
   
   
   
