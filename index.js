@@ -107,9 +107,28 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight,age){ 
+  if(age >= 1){
+      if(weight < 5){
+        return weight * .05;
+      } else if (weight > 6 && weight < 10){
+        return weight * .04;
+      } else if (weight > 11 && weight < 15){
+        return weight * .03;
+    } else if (weight > 15){
+      return weight * .02;
   }
+}
+  if(age > .16 && age < .33){
+      return weight * .1;
+    } else if(age >.33 && age <.58){
+      return weight * .05;
+    } else if(age >.58 && age <1){
+      return weight * .04
+    }
+}
+
+  console.log(hungryDog(15,1))
 
 
 
@@ -132,25 +151,29 @@ Use the game function below to do the following:
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
-function game(user, computer){
-  let value = '';
-  let choice = Math.random();
-  if(choice > 0 && choice < 0.33){
-    value = "Scissors"
-  } else if(choice > 0.33 && choice < 0.66){
-    value = "Paper"
-  } else if(choice > 0.67 && choice <= 1){
-    value = "Rock"
-  }
 
-  if((user == "Scissors" && value == "Paper") || (user == "Paper" && value == "Rock") || (user == "Rock" && value == "Scissors")){
+let computer = '';
+let choice = Math.random();
+if(choice > 0 && choice < 0.33){
+  computer = "scissors"
+} else if(choice > 0.33 && choice < 0.66){
+  computer = "paper"
+} else if(choice > 0.67 && choice <= 1){
+  computer = "rock"
+}
+
+function game(user, computer){
+if((user == "scissors" && computer == "paper") || (user == "paper" && computer == "rock") || (user == "rock" && computer == "scissors")){
       return "you win!";
-    } else if((user == "Paper" && value == "Scissors") || (user == "Rock" && value == "Paper") || (user == "Scissors" && value == "Rock")){ 
+    } else if((user == "paper" && computer == "scissors") || (user == "rock" && computer == "paper") || (user == "scissors" && computer == "rock")){ 
       return "you lose!";
-    } else if(user == value){
-      return "it's a tie"
+    } else if(user === computer){
+      return "it's a tie";
     }
     }
+
+    console.log(game("Rock","Paper"))
+  
 
 
 
